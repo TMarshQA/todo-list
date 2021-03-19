@@ -17,3 +17,4 @@ pipeline{
       sh "bsh deploy-script.sh"}
     }
   }
+}
