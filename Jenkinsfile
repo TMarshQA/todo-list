@@ -1,18 +1,19 @@
 pipeline{
   agent any
+                 
   stages{
     stage('Install Dependencies'){
       steps{
-        sh "python3 -m venv venv"
-        sh "source venv/bin/activate"
+        sh "bash install-dependencies.sh"
       }
     }
     stage('Test'){
       steps{
-        sh "pip install -r requirements.txt"
+        sh "bash test-script.sh"
       }
     }
     stage('Deploy'){
       steps{
-      sh "pip install pytest pytest-cov"}
+      sh "bsh deploy-script.sh"}
     }
+  }
